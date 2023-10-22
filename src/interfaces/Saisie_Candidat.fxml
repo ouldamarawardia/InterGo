@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="418.0" prefWidth="700.0" styleClass="backgrnd" stylesheets="@../Application/Application.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+   <children>
+      <Label layoutX="34.0" layoutY="38.0" text="Nouveau Condidat">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="44.0" layoutY="89.0" promptText="Nom" styleClass="tf" stylesheets="@../Application/Application.css" AnchorPane.leftAnchor="45.0" />
+      <TextField layoutX="238.0" layoutY="89.0" promptText="Prenom" styleClass="tf" AnchorPane.leftAnchor="240.0" />
+      <TextField layoutX="44.0" layoutY="146.0" promptText="Telephone" stylesheets="@../Application/Application.css" AnchorPane.leftAnchor="45.0">
+         <styleClass>
+            <String fx:value="tf_box" />
+            <String fx:value="tf" />
+         </styleClass>
+      </TextField>
+      <TextField layoutX="238.0" layoutY="146.0" promptText="Email" stylesheets="@../Application/Application.css" AnchorPane.leftAnchor="240.0">
+         <styleClass>
+            <String fx:value="tf_box" />
+            <String fx:value="tf" />
+            <String fx:value="text-field" />
+         </styleClass>
+      </TextField>
+      <JFXComboBox layoutX="429.0" layoutY="89.0" prefHeight="25.0" prefWidth="127.0" promptText="Age" unFocusColor="#7294ac" AnchorPane.leftAnchor="430.0" />
+      <JFXComboBox layoutX="429.0" layoutY="200.0" prefHeight="25.0" prefWidth="171.0" promptText="Années d'experience" unFocusColor="#7294ac" AnchorPane.leftAnchor="430.0" />
+      <JFXComboBox layoutX="580.0" layoutY="146.0" prefHeight="25.0" prefWidth="83.0" promptText="Nbr Enfant" style="visibility: false;" unFocusColor="#7294ac" />
+      <JFXComboBox layoutX="429.0" layoutY="146.0" prefHeight="25.0" prefWidth="127.0" promptText="Situation Familiale" unFocusColor="#7294ac" AnchorPane.leftAnchor="430.0" />
+      <CheckBox layoutX="44.0" layoutY="213.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="149.0" text="Diplome adecoite" textFill="#7294ac" AnchorPane.leftAnchor="45.0" />
+      <CheckBox layoutX="238.0" layoutY="213.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="149.0" text="Compétence" textFill="#7294ac" AnchorPane.leftAnchor="240.0" />
+      <TableView layoutX="20.0" layoutY="286.0" prefHeight="117.0" prefWidth="660.0" style="-fx-background-color: whitesmoke;" stylesheets="@../Application/Application.css" AnchorPane.bottomAnchor="14.666666666666686" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+        <columns>
+          <TableColumn prefWidth="43.33334159851074" text="ID" />
+          <TableColumn prefWidth="123.99999237060547" text="Nom" />
+            <TableColumn prefWidth="109.33332824707031" text="Prénom" />
+            <TableColumn prefWidth="106.66668701171875" text="Telephone" />
+            <TableColumn prefWidth="107.99996948242188" text="Email" />
+            <TableColumn prefWidth="89.33331298828125" text="Expèrience" />
+            <TableColumn prefWidth="77.33331298828125" text="Compétence" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-cell" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <JFXButton layoutX="580.0" layoutY="247.0" prefHeight="25.0" prefWidth="83.0" styleClass="buttons" stylesheets="@../Application/Application.css" text="Ajouter" AnchorPane.leftAnchor="570.0" AnchorPane.rightAnchor="30.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,1229 @@
+@prefix : <http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10> .
+
+<http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_competence
+:a_competence rdf:type owl:ObjectProperty ;
+              rdfs:domain :Condidat ;
+              rdfs:range :Competence .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_score
+:a_score rdf:type owl:ObjectProperty ;
+         rdfs:domain :Condidat ;
+         rdfs:range :Score .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Adresse
+:Adresse rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Condidat ;
+         rdfs:range xsd:NMTOKEN .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Matricule
+:Matricule rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Condidat ;
+           rdfs:range xsd:NMTOKEN .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Nom
+:Nom rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Condidat ;
+     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Prenom
+:Prenom rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Condidat ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Tel
+:Tel rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Condidat .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_age_adeq
+:a_age_adeq rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Condidat ;
+            rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_competence_adeq
+:a_competence_adeq rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Condidat ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_diplome
+:a_diplome rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Condidat ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_enfant
+:a_enfant rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Condidat ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#a_experience_adeq
+:a_experience_adeq rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Condidat ;
+                   rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#situation_familiale
+:situation_familiale rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Condidat ;
+                     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche1
+:Branche1 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Eleve"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :situation_familiale ;
+                                                       owl:hasValue "marié"
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :a_score ;
+                                owl:cardinality "0"^^xsd:nonNegativeInteger
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche10
+:Branche10 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Moyen"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "célibataire"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche11
+:Branche11 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche12
+:Branche12 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche13
+:Branche13 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche14
+:Branche14 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche15
+:Branche15 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "célibataire"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche16
+:Branche16 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Eleve"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche17
+:Branche17 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Eleve"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche18
+:Branche18 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Eleve"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche19
+:Branche19 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Eleve"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche2
+:Branche2 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Eleve"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "false"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :situation_familiale ;
+                                                       owl:hasValue "marié"
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche20
+:Branche20 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Eleve"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "célibataire"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche21
+:Branche21 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Moyen"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche22
+:Branche22 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Moyen"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche23
+:Branche23 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Moyen"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche24
+:Branche24 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Moyen"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche25
+:Branche25 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Moyen"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "célibataire"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche26
+:Branche26 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche27
+:Branche27 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "marié"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche28
+:Branche28 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche29
+:Branche29 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "divorcé"
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :situation_familiale ;
+                                                                        owl:hasValue "voeuf"
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_enfant ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche3
+:Branche3 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Class ;
+                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "divorcé"
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "voeuf"
+                                                                     ]
+                                                                   )
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Eleve"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche30
+:Branche30 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_competence_adeq ;
+                                                        owl:hasValue "Insuffisant"
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_experience_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :situation_familiale ;
+                                                        owl:hasValue "célibataire"
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche31
+:Branche31 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "true"^^xsd:boolean
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_diplome ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche32
+:Branche32 rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :a_age_adeq ;
+                                                        owl:hasValue "false"^^xsd:boolean
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche4
+:Branche4 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Class ;
+                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "divorcé"
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "voeuf"
+                                                                     ]
+                                                                   )
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Eleve"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "false"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche5
+:Branche5 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Eleve"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :situation_familiale ;
+                                                       owl:hasValue "célibataire"
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche6
+:Branche6 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Moyen"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :situation_familiale ;
+                                                       owl:hasValue "marié"
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche7
+:Branche7 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Moyen"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "false"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :situation_familiale ;
+                                                       owl:hasValue "marié"
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche8
+:Branche8 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Class ;
+                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "divorcé"
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "voeuf"
+                                                                     ]
+                                                                   )
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Moyen"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Branche9
+:Branche9 rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Condidat
+                                                     [ rdf:type owl:Class ;
+                                                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "divorcé"
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :situation_familiale ;
+                                                                       owl:hasValue "voeuf"
+                                                                     ]
+                                                                   )
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_age_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_competence_adeq ;
+                                                       owl:hasValue "Moyen"
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_diplome ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_enfant ;
+                                                       owl:hasValue "false"^^xsd:boolean
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :a_experience_adeq ;
+                                                       owl:hasValue "true"^^xsd:boolean
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Score .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Competence
+:Competence rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Condidat
+:Condidat rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :a_score ;
+                            owl:someValuesFrom :Score
+                          ] .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Score
+:Score rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Person1
+:Person1 rdf:type owl:NamedIndividual ;
+         :a_age_adeq "true"^^xsd:boolean ;
+         :a_competence_adeq "Eleve"^^xsd:string ;
+         :a_diplome "true"^^xsd:boolean ;
+         :a_enfant "false"^^xsd:boolean ;
+         :a_experience_adeq "true"^^xsd:boolean ;
+         :situation_familiale "marié"^^xsd:string .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Person2
+:Person2 rdf:type owl:NamedIndividual ;
+         :a_age_adeq "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/click/ontologies/2022/4/untitled-ontology-10#Person3
+:Person3 rdf:type owl:NamedIndividual ;
+         :a_age_adeq "true"^^xsd:boolean ;
+         :a_competence_adeq "Eleve"^^xsd:string ;
+         :a_diplome "true"^^xsd:boolean ;
+         :a_enfant "true"^^xsd:boolean ;
+         :a_experience_adeq "true"^^xsd:boolean ;
+         :situation_familiale "voeuf"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

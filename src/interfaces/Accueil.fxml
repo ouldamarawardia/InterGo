@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="418.0" prefWidth="700.0" style="-fx-background-color: white;" stylesheets="@../Application/Application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton layoutX="405.0" layoutY="258.0" prefHeight="26.0" prefWidth="160.0" styleClass="buttons" stylesheets="@../Application/Application.css" text="Le Classement Présedent" textFill="#54a2e2" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="242.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXButton>
+      <JFXButton layoutX="149.0" layoutY="258.0" prefHeight="26.0" prefWidth="160.0" styleClass="buttons" stylesheets="@../Application/Application.css" text="Saisie Condidat" textFill="#54a2e2" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="242.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="418.0" prefWidth="700.0" styleClass="backgrnd" stylesheets="@../Application/Application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="34.0" layoutY="38.0" text="Recherche">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="187.0" layoutY="39.0" prefHeight="25.0" prefWidth="165.0" promptText="Nom" styleClass="tf" stylesheets="@../Application/Application.css" text="par ID ou Nom ou Prenon" AnchorPane.leftAnchor="187.0" />
+      <JFXComboBox layoutX="580.0" layoutY="146.0" prefHeight="25.0" prefWidth="83.0" promptText="Nbr Enfant" style="visibility: false;" unFocusColor="#7294ac" />
+      <TableView layoutX="20.0" layoutY="159.0" prefHeight="270.0" prefWidth="660.0" style="-fx-background-color: whitesmoke;" stylesheets="@../Application/Application.css" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+        <columns>
+          <TableColumn prefWidth="43.33334159851074" text="ID" />
+          <TableColumn prefWidth="123.99999237060547" text="Nom" />
+            <TableColumn prefWidth="109.33332824707031" text="Prénom" />
+            <TableColumn prefWidth="106.66668701171875" text="Telephone" />
+            <TableColumn prefWidth="107.99996948242188" text="Email" />
+            <TableColumn prefWidth="82.0" text="Expèrience" />
+            <TableColumn prefWidth="84.6666259765625" text="Compétence" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-cell" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+   </children>
+</AnchorPane>
